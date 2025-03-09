@@ -155,7 +155,7 @@ export default function Cart() {
                     </Link>
                     <Button 
                       variant="outline" 
-                      className="w-full"
+                      className="w-full text-black"
                       onClick={clearCart}
                     >
                       Clear Cart

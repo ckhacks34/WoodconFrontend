@@ -43,7 +43,7 @@ export default function HeroSection() {
             </a>
             <a 
               href="#contact" 
-              className="bg-transparent hover:bg-white hover:text-woodbrown text-white font-semibold py-3 px-6 border-2 border-white rounded-lg transition duration-300 text-center"
+              className="bg-transparent hover:bg-white hover:text-woodbrown text-black font-semibold py-3 px-6 border-2 border-white rounded-lg transition duration-300 text-center"
               style={{ '--tw-hover-text-color': '#8B4513' } as React.CSSProperties}
             >
               Contact Us
