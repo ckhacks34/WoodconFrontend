@@ -34,7 +34,7 @@ export default function Header() {
     { href: "/#products", label: "Our Woods" },
     { href: "/#gallery", label: "Gallery" },
     { href: "/#contact", label: "Contact" },
-    { href: "/shop", label: "Shop" }
+    { href: "/shop", label: "Shop", isRouterLink: true }
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function Header() {
               <i className="fas fa-tree text-2xl" style={{ color: '#E6C9A0' }}></i>
             </div>
             <Link href="/">
-              <a className="font-['Playfair_Display'] text-xl md:text-2xl font-bold">WOODCON</a>
+              <span className="font-['Playfair_Display'] text-xl md:text-2xl font-bold cursor-pointer">WOODCON</span>
             </Link>
           </div>
           
@@ -66,14 +66,14 @@ export default function Header() {
           {/* Desktop Navigation - now always visible on desktop */}
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              item.href.startsWith("/shop") ? (
+              item.isRouterLink ? (
                 <Link key={item.label} href={item.href}>
-                  <a 
-                    className="hover:text-ochre transition duration-300"
+                  <span 
+                    className="hover:text-ochre transition duration-300 cursor-pointer"
                     style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
                   >
                     {item.label}
-                  </a>
+                  </span>
                 </Link>
               ) : (
                 <a 
@@ -101,14 +101,14 @@ export default function Header() {
             >
               <nav className="flex flex-col space-y-3 mt-4">
                 {navItems.map((item) => (
-                  item.href.startsWith("/shop") ? (
+                  item.isRouterLink ? (
                     <Link key={item.label} href={item.href}>
-                      <a 
-                        className="hover:text-ochre transition duration-300"
+                      <span 
+                        className="hover:text-ochre transition duration-300 cursor-pointer"
                         style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
                       >
                         {item.label}
-                      </a>
+                      </span>
                     </Link>
                   ) : (
                     <a 

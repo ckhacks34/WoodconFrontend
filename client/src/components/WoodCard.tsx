@@ -51,8 +51,8 @@ export default function WoodCard({ product, index }: WoodCardProps) {
         <div className="flex justify-between items-center">
           <span className="font-semibold" style={{ color: '#2F4F4F' }}>${price.toFixed(2)} / {priceUnit}</span>
           <Link href="/shop">
-            <a 
-              className="text-white py-2 px-4 rounded transition duration-300"
+            <span 
+              className="text-white py-2 px-4 rounded transition duration-300 cursor-pointer inline-block"
               style={{ 
                 backgroundColor: '#8B4513',
                 '--tw-hover-bg-opacity': 1,
@@ -60,7 +60,7 @@ export default function WoodCard({ product, index }: WoodCardProps) {
               } as React.CSSProperties}
             >
               Purchase
-            </a>
+            </span>
           </Link>
         </div>
       </div>

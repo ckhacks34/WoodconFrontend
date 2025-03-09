@@ -51,9 +51,9 @@ export default function Shop() {
       <div className="container mx-auto px-4">
         <div className="mb-8">
           <Link href="/">
-            <a className="inline-flex items-center text-woodbrown hover:underline mb-4" style={{ color: '#8B4513' }}>
+            <span className="inline-flex items-center text-woodbrown hover:underline mb-4 cursor-pointer" style={{ color: '#8B4513' }}>
               <i className="fas fa-arrow-left mr-2"></i> Back to Home
-            </a>
+            </span>
           </Link>
           
           <motion.h1 
@@ -185,9 +185,9 @@ export default function Shop() {
             <h2 className="font-['Playfair_Display'] text-2xl md:text-3xl font-bold mb-4">Need Custom Wood Products?</h2>
             <p className="mb-6">Contact our team for custom orders, bulk purchasing, or specific wood requirements.</p>
             <Link href="/#contact">
-              <a className="inline-block bg-white text-woodbrown font-semibold py-3 px-8 rounded-lg transition duration-300" style={{ color: '#8B4513' }}>
+              <span className="inline-block bg-white text-woodbrown font-semibold py-3 px-8 rounded-lg transition duration-300 cursor-pointer" style={{ color: '#8B4513' }}>
                 Contact Us
-              </a>
+              </span>
             </Link>
           </div>
         </motion.div>
