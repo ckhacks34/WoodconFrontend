@@ -60,8 +60,7 @@ export default function Header() {
                 item.isRouterLink ? (
                   <Link key={item.label} href={item.href}>
                     <span 
-                      className="hover:text-ochre transition duration-300 cursor-pointer"
-                      style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
+                      className="transition duration-300 cursor-pointer hover:text-[#D2B48C] relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#D2B48C] after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
                     >
                       {item.label}
                     </span>
@@ -70,8 +69,7 @@ export default function Header() {
                   <a 
                     key={item.label}
                     href={item.href} 
-                    className="hover:text-ochre transition duration-300"
-                    style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
+                    className="transition duration-300 hover:text-[#D2B48C] relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#D2B48C] after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
                   >
                     {item.label}
                   </a>
@@ -110,8 +108,7 @@ export default function Header() {
                   item.isRouterLink ? (
                     <Link key={item.label} href={item.href}>
                       <span 
-                        className="hover:text-ochre transition duration-300 cursor-pointer"
-                        style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
+                        className="transition duration-300 cursor-pointer hover:text-[#D2B48C]"
                       >
                         {item.label}
                       </span>
@@ -120,8 +117,7 @@ export default function Header() {
                     <a 
                       key={item.label}
                       href={item.href} 
-                      className="hover:text-ochre transition duration-300"
-                      style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
+                      className="transition duration-300 hover:text-[#D2B48C]"
                     >
                       {item.label}
                     </a>

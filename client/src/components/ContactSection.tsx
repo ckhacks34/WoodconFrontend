@@ -109,12 +109,10 @@ export default function ContactSection() {
                 <a 
                   key={index}
                   href={link.href} 
-                  className="text-white p-3 rounded-full transition duration-300"
-                  style={{ 
-                    backgroundColor: '#8B4513',
-                    '--tw-hover-bg-opacity': 1,
-                    '--tw-hover-bg-color': '#5D2906'
-                  } as React.CSSProperties}
+                  className="text-white p-3 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
+                  style={{ backgroundColor: '#8B4513' }}
+                  onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#5D2906'}
+                  onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#8B4513'}
                 >
                   <i className={`fab ${link.icon}`}></i>
                 </a>
@@ -192,12 +190,10 @@ export default function ContactSection() {
                 
                 <button 
                   type="submit" 
-                  className="w-full text-white font-semibold py-3 px-6 rounded-md transition duration-300 flex justify-center items-center"
-                  style={{ 
-                    backgroundColor: '#8B4513',
-                    '--tw-hover-bg-opacity': 1,
-                    '--tw-hover-bg-color': '#5D2906'
-                  } as React.CSSProperties}
+                  className="w-full text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 flex justify-center items-center hover:shadow-lg hover:scale-[1.01]"
+                  style={{ backgroundColor: '#8B4513' }}
+                  onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#5D2906'}
+                  onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#8B4513'}
                 >
                   Send Message <i className="fas fa-paper-plane ml-2"></i>
                 </button>

@@ -60,13 +60,13 @@ export default function Home() {
               <p className="text-lg mb-8 max-w-2xl mx-auto">Each piece of wood we offer carries with it the rich heritage and distinctive character of the African landscape. Our commitment to quality and sustainability ensures that this legacy continues for generations to come.</p>
               <a 
                 href="#contact" 
-                className="inline-block font-semibold py-3 px-8 rounded-lg transition duration-300"
+                className="inline-block font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px]"
                 style={{ 
                   backgroundColor: '#D2B48C',
-                  color: '#8B4513',
-                  '--tw-hover-bg-opacity': 1,
-                  '--tw-hover-bg-color': '#BEA078'
-                } as React.CSSProperties}
+                  color: '#8B4513'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#BEA078'}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#D2B48C'}
               >
                 Partner With Us
               </a>
