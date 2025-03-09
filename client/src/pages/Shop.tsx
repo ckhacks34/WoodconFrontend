@@ -22,6 +22,21 @@ export default function Shop() {
     { id: "african", label: "Other African" }
   ];
 
+  const woodTypeImages = [
+    {
+      type: "hardwood",
+      title: "Hardwoods",
+      description: "Dense, durable woods known for their strength and beauty. Perfect for furniture, flooring, and high-end applications.",
+      image: "https://images.unsplash.com/photo-1548988007-b5315c7d7d41?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      type: "softwood",
+      title: "Softwoods",
+      description: "Lightweight woods typically from coniferous trees, ideal for construction, paper products, and general carpentry.",
+      image: "https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    }
+  ];
+
   const filteredProducts = woodProducts.filter(product => {
     if (activeCategory === "all") return true;
     if (activeCategory === "hardwood") return product.type === "hardwood";
@@ -68,6 +83,41 @@ export default function Shop() {
             Explore our premium selection of African hardwoods and softwoods. Each piece is carefully selected for quality and sustainability.
           </motion.p>
         </div>
+
+        {/* Wood Type Showcase */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {woodTypeImages.map((type, index) => (
+            <motion.div
+              key={index}
+              className="rounded-lg overflow-hidden shadow-lg relative group"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setActiveCategory(type.type as Category)}
+            >
+              <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              <img
+                src={type.image}
+                alt={type.title}
+                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="font-['Playfair_Display'] text-2xl font-bold mb-2">{type.title}</h3>
+                <p className="text-sm md:text-base">{type.description}</p>
+                <button 
+                  className="mt-4 py-2 px-6 rounded-full bg-white text-woodbrown font-semibold transition duration-300 hover:bg-opacity-90"
+                  style={{ color: '#8B4513' }}
+                >
+                  View {type.title}
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
         
         {/* Filtering Options */}
         <motion.div 

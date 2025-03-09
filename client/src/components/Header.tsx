@@ -33,7 +33,8 @@ export default function Header() {
     { href: "/#about", label: "About Us" },
     { href: "/#products", label: "Our Woods" },
     { href: "/#gallery", label: "Gallery" },
-    { href: "/#contact", label: "Contact" }
+    { href: "/#contact", label: "Contact" },
+    { href: "/shop", label: "Shop" }
   ];
 
   return (
@@ -62,17 +63,28 @@ export default function Header() {
             </button>
           </div>
           
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - now always visible on desktop */}
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <a 
-                key={item.label}
-                href={item.href} 
-                className="hover:text-ochre transition duration-300"
-                style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
-              >
-                {item.label}
-              </a>
+              item.href.startsWith("/shop") ? (
+                <Link key={item.label} href={item.href}>
+                  <a 
+                    className="hover:text-ochre transition duration-300"
+                    style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
+                  >
+                    {item.label}
+                  </a>
+                </Link>
+              ) : (
+                <a 
+                  key={item.label}
+                  href={item.href} 
+                  className="hover:text-ochre transition duration-300"
+                  style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
+                >
+                  {item.label}
+                </a>
+              )
             ))}
           </nav>
         </div>
@@ -89,14 +101,25 @@ export default function Header() {
             >
               <nav className="flex flex-col space-y-3 mt-4">
                 {navItems.map((item) => (
-                  <a 
-                    key={item.label}
-                    href={item.href} 
-                    className="hover:text-ochre transition duration-300"
-                    style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
-                  >
-                    {item.label}
-                  </a>
+                  item.href.startsWith("/shop") ? (
+                    <Link key={item.label} href={item.href}>
+                      <a 
+                        className="hover:text-ochre transition duration-300"
+                        style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
+                      >
+                        {item.label}
+                      </a>
+                    </Link>
+                  ) : (
+                    <a 
+                      key={item.label}
+                      href={item.href} 
+                      className="hover:text-ochre transition duration-300"
+                      style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
+                    >
+                      {item.label}
+                    </a>
+                  )
                 ))}
               </nav>
             </motion.div>

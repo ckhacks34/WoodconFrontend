@@ -4,6 +4,7 @@ import ProductsSection from "@/components/ProductsSection";
 import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
 import PatternDivider from "@/components/PatternDivider";
+import WoodTypeShowcase from "@/components/WoodTypeShowcase";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -37,7 +38,8 @@ export default function Home() {
       <AboutSection />
       <PatternDivider pattern="primary" />
       <ProductsSection />
-      
+      <WoodTypeShowcase />
+
       <motion.div 
         className="py-12 md:py-20"
         style={{ 
