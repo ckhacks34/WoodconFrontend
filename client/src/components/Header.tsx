@@ -53,41 +53,46 @@ export default function Header() {
             </Link>
           </div>
           
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button 
-              onClick={toggleMobileMenu} 
-              className="text-white focus:outline-none"
-              aria-label="Toggle menu"
-            >
-              <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
-            </button>
-          </div>
-          
-          {/* Desktop Navigation - now always visible on desktop */}
-          <nav className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              item.isRouterLink ? (
-                <Link key={item.label} href={item.href}>
-                  <span 
-                    className="hover:text-ochre transition duration-300 cursor-pointer"
+          <div className="flex items-center">
+            {/* Desktop Navigation - now always visible on desktop */}
+            <nav className="hidden md:flex space-x-8 mr-4">
+              {navItems.map((item) => (
+                item.isRouterLink ? (
+                  <Link key={item.label} href={item.href}>
+                    <span 
+                      className="hover:text-ochre transition duration-300 cursor-pointer"
+                      style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
+                    >
+                      {item.label}
+                    </span>
+                  </Link>
+                ) : (
+                  <a 
+                    key={item.label}
+                    href={item.href} 
+                    className="hover:text-ochre transition duration-300"
                     style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
                   >
                     {item.label}
-                  </span>
-                </Link>
-              ) : (
-                <a 
-                  key={item.label}
-                  href={item.href} 
-                  className="hover:text-ochre transition duration-300"
-                  style={{ '--tw-hover-text-opacity': 1, '--tw-hover-text-color': '#D2B48C' } as React.CSSProperties}
-                >
-                  {item.label}
-                </a>
-              )
-            ))}
-          </nav>
+                  </a>
+                )
+              ))}
+            </nav>
+
+            {/* Cart button */}
+            <Cart />
+            
+            {/* Mobile menu button */}
+            <div className="md:hidden ml-4">
+              <button 
+                onClick={toggleMobileMenu} 
+                className="text-white focus:outline-none"
+                aria-label="Toggle menu"
+              >
+                <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
+              </button>
+            </div>
+          </div>
         </div>
         
         {/* Mobile Navigation */}

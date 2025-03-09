@@ -3,11 +3,14 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { woodProducts } from "../data/woodProducts";
 import WoodCard from "../components/WoodCard";
+import { ShoppingCart } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 type Category = "all" | "hardwood" | "softwood" | "zambian" | "african";
 
 export default function Shop() {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
+  const { cartCount } = useCart();
   
   useEffect(() => {
     // Scroll to top when page loads

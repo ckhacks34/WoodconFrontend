@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { WoodProduct } from "../types";
+import { ShoppingCart } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 interface WoodCardProps {
   product: WoodProduct;
@@ -8,6 +10,7 @@ interface WoodCardProps {
 }
 
 export default function WoodCard({ product, index }: WoodCardProps) {
+  const { addToCart } = useCart();
   const {
     name,
     origin,
@@ -50,18 +53,33 @@ export default function WoodCard({ product, index }: WoodCardProps) {
         
         <div className="flex justify-between items-center">
           <span className="font-semibold" style={{ color: '#2F4F4F' }}>${price.toFixed(2)} / {priceUnit}</span>
-          <Link href="/shop">
-            <span 
-              className="text-white py-2 px-4 rounded transition duration-300 cursor-pointer inline-block"
+          <div className="flex space-x-2">
+            <button
+              onClick={() => addToCart(product)}
+              className="text-white py-2 px-3 rounded transition duration-300 flex items-center"
               style={{ 
-                backgroundColor: '#8B4513',
+                backgroundColor: '#2F4F4F',
                 '--tw-hover-bg-opacity': 1,
-                '--tw-hover-bg-color': '#5D2906'
+                '--tw-hover-bg-color': '#1F3333'
               } as React.CSSProperties}
+              aria-label="Add to cart"
             >
-              Purchase
-            </span>
-          </Link>
+              <ShoppingCart size={16} className="mr-1" />
+              <span>Add</span>
+            </button>
+            <Link href="/shop">
+              <span 
+                className="text-white py-2 px-3 rounded transition duration-300 cursor-pointer inline-block"
+                style={{ 
+                  backgroundColor: '#8B4513',
+                  '--tw-hover-bg-opacity': 1,
+                  '--tw-hover-bg-color': '#5D2906'
+                } as React.CSSProperties}
+              >
+                Details
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </motion.div>

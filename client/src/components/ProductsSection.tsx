@@ -90,8 +90,8 @@ export default function ProductsSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <Link href="/shop">
-            <a 
-              className="inline-block text-white font-semibold py-3 px-8 rounded-lg transition duration-300"
+            <span 
+              className="inline-block text-white font-semibold py-3 px-8 rounded-lg transition duration-300 cursor-pointer"
               style={{ 
                 backgroundColor: '#2F4F4F',
                 '--tw-hover-bg-opacity': 1,
@@ -99,7 +99,7 @@ export default function ProductsSection() {
               } as React.CSSProperties}
             >
               View All Products <i className="fas fa-arrow-right ml-2"></i>
-            </a>
+            </span>
           </Link>
         </motion.div>
       </div>
