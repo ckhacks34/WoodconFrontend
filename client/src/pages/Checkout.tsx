@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { motion } from 'framer-motion';
-import Layout from '../components/Layout';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
@@ -48,17 +47,16 @@ export default function Checkout() {
   };
 
   return (
-    <Layout>
-      <div className="py-10 px-4 max-w-7xl mx-auto">
-        <motion.h1 
-          className="text-3xl md:text-4xl font-bold font-['Playfair_Display'] mb-8 text-center" 
-          style={{ color: '#8B4513' }}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Checkout
-        </motion.h1>
+    <div className="py-10 px-4 max-w-7xl mx-auto">
+      <motion.h1 
+        className="text-3xl md:text-4xl font-bold font-['Playfair_Display'] mb-8 text-center" 
+        style={{ color: '#8B4513' }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Checkout
+      </motion.h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Checkout Form */}
@@ -180,6 +178,5 @@ export default function Checkout() {
           </motion.div>
         </div>
       </div>
-    </Layout>
   );
 }
