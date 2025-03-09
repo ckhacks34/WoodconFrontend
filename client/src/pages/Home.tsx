@@ -5,6 +5,7 @@ import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
 import PatternDivider from "@/components/PatternDivider";
 import WoodTypeShowcase from "@/components/WoodTypeShowcase";
+import EcoImpactCalculator from "@/components/EcoImpactCalculator";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -77,6 +78,8 @@ export default function Home() {
       
       <GallerySection />
       <PatternDivider pattern="primary" />
+      <EcoImpactCalculator />
+      <PatternDivider pattern="african" />
       <ContactSection />
     </>
   );

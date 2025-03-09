@@ -34,6 +34,7 @@ export default function Header() {
     { href: "/#about", label: "About Us" },
     { href: "/#products", label: "Our Woods" },
     { href: "/#gallery", label: "Gallery" },
+    { href: "/#eco-calculator", label: "Eco Calculator" },
     { href: "/#contact", label: "Contact" },
     { href: "/shop", label: "Shop", isRouterLink: true }
   ];
